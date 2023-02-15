@@ -1,0 +1,306 @@
+/* rest selector */
+
+
+/* the styles for the elements */
+body {
+	
+	font-family: Arial, Helvetica, sans-serif;
+    font-size: 100%;
+	margin: 0 auto;
+	width: 99%;
+	max-width: 1080px;
+	border: 3px solid black;
+	border-radius: 5px;
+	background: #e5ffff;
+	
+}
+html{
+	background-color: lightgray;
+}
+
+header {
+	padding: 1.5em 0 2em 0;
+	background-image: linear-gradient(
+	    30deg, #a4a4a4 0%, #a4a4a4 30%, #3b3b3b 50%, #a4a4a4 80%, #a4a4a4 100%);
+		border-bottom: 3px solid black;
+}
+header h1{
+	border-top: 3px solid black;
+	padding-top: 1.5em;
+	font-family: Paw;
+}
+header h2 {
+	font-size: 250%;
+	color: var(--global-color-1);
+	padding-top: 10px;
+	font-family: 'Allerta Stencil';
+}
+header h3 {
+	font-size: 130%;
+	font-style: italic;
+	
+}
+header img {
+	float: left;
+	padding: 0 3.75%
+}
+.shadow {
+	text-shadow: 2px 2px 2px #3b3b3b;
+}
+/* Menu Navigation Rules*/
+#nav_menu ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	position: relative;
+	font-size: 22px;
+}
+#nav_menu ul li {
+	float: left;
+	width: 50%;
+}
+#nav_menu ul li a {
+    display: block;
+    text-align: center;
+    padding: 1em 0;
+    text-decoration: none;
+    background-color: #1601c6;
+    color: white;
+    
+	font-family: Paw;
+}
+#nav_menu a.current {
+	color: blue;
+}
+#nav_menu ul ul {
+    width: 100%;
+	display: none;
+    position: absolute;
+    top: 100%;
+}
+#nav_menu ul ul li {
+	float: none;
+}
+#nav_menu ul li:hover > ul {
+	display: block;
+}
+#nav_menu > ul::after {
+    content: "";
+    clear: both;
+    display: block; 
+}
+/* the styles for the main content */
+main {
+	padding-top: 3%;
+	padding-bottom: 6%;
+	padding-left: 3%;
+	padding-right: 6%;
+}
+main h1 {
+	font-size: 150%;
+	padding-top: .5em;
+	padding-bottom: .25em;
+	font-family: Paw;
+}
+main h2 {
+	color: var(#1601c6);
+	font-size: 170%;
+	/*margin-left: 9%;*/
+	
+}
+main h3 {
+	font-size: 130%;
+	margin-left: 6%;
+	font-style: bold;
+	
+}
+/* the style for when Focus */
+a:focus, a:hover {
+	font-style: bold;
+	font-style: italic;
+	font-family: Paw;
+}
+/*styles for thensections*/
+section {
+	clear: right;
+	width: 60%;
+	/*float: right;*/
+	float: none;
+	padding: 0 20px 20px 20px;
+	
+}
+section img {
+	
+	max-width: 50%;
+	min-width: 100px;
+	margin: .5em 0 1em 1em;
+	border: 1px solid black;
+}
+section h1 {
+	font-size: 150%;
+	padding: .5em 0 .25em 0;
+	margin: 0;
+}
+section h2 {
+	color: #1601c6;
+	font-size: 130%;
+	padding: .5em 0 .25em 0;
+}
+section p {
+	padding-bottom: .5em;
+}
+section blockquote {
+	padding: 0 2em;
+	font-style: italic;
+}
+section ul {
+	padding: 0 0 .25em 1.25em;
+}
+section li {
+	padding-bottom: .35em;
+}
+/* styles for the article */
+article {
+	padding: .5em 0;
+	padding-left: 7px;
+	border-top: 3px solid #1601c6;
+	border-bottom: 3px solid #1601c6;
+	border-left: 3px solid #1601c6;
+	border-right: 3px solid #1601c6;
+	background-color: #1601c6;
+	border-radius: 10px;
+	color: white;
+}
+article h2 {
+	padding-top: 0;
+	color: white;
+}
+article h3 {
+	font-size: 105%;
+	padding-bottom: .25em;
+	color: white;
+}
+article img {
+	float: right;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+/* the styles for the footer */
+footer p {
+	clear: right;
+	text-align: center;
+	padding: 1em 0;
+	background-color: #e5ffff;
+	color: #1601c6;
+}
+/* resize rules/styles media queries */
+@media only screen and (max-width: 734px) {
+	section h1 {
+		font-size: 125%;
+		text-align: left;
+	}
+	section h2, aside h2 {
+		font-size: 110%;
+		text-align: left;
+	}
+	aside h3 a {
+		font-size: 85%;
+	}
+}
+
+@media only screen and (max-width: 648px) {
+	header img { float: none; }
+	header { text-align: center; }
+	section {
+		float: none;
+		width: 100%;
+	}
+	aside {
+		float: none;
+		padding-right: 2.5%; 
+		width: 100%;
+		text-align: left;
+	}
+	article img { max-width: 100%; }
+	#speakers {
+		column-count: 2;
+	}
+	
+}
+
+@media only screen and (max-width: 414px) {
+	body { font-size: 90%; }
+}
+
+#flex{
+	display: flex;
+	max-width: 95%;
+	align-items:flex-start;
+	font-family: 'Allerta Stencil';font-size: 20px;
+	background-color:black;
+}
+
+#flex div {
+	width: 50%;
+	padding: 15px;
+}
+
+#flex_in{
+	display: flex;
+	flex-direction: column;
+	color: white;
+	
+}
+#bio img {
+	width: 100%;
+	height: 100%;
+}
+#flex_in img{
+	width: 90%;
+	height: 90%;
+}
+
+#flex_in div {
+	padding: 2px;
+	width: 100%;
+	text-align: center;
+}
+
+#bio{
+	clear: right;
+	width: 60%;
+	padding: 0 20px 20px 20px;
+}
+
+#flex_in h2{
+	text-align: center;
+	font-family: 'Allerta Stencil';font-size: 28px;
+	
+}
+#flex_in a{
+	text-decoration: none
+}
+#flex_in  a{
+	color: white;
+}
+
+#flexcontainer{
+	display: flex;
+	flex-direction: column;
+	max-width: 100%;
+}
+
+#flexcontainer div {
+	display: flex;
+	justify-content: center;
+}
+
+#flexcontainer div img {
+	padding: 15px;
+	width: 40%;
+	height: 40%;
+	border: 5px ;
+}
