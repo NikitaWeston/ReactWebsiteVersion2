@@ -53,95 +53,50 @@ function App() {
             	</div>
 		    </aside>
         </div>
+		
 	</main>
 	
-	<Clicker
-	author= "jack and Jill"
-	famousBooks = "jack and the beanstalk"
-	/>
-	<ComponentWithProps
-	 name= "Nikitta's "
-	 favGames= "Diablo 2, Half-life 2, Starcraft 2, Dota 2"
-	/>
-	<NameGames/>
 	<footer>
-		<p>&copy; 2022, Im not putting my actual address here, zip code</p>
+		<p><NameGames/></p>
 	</footer> 
 	</>
 
   );
 }
-function ComponentWithProps(props){
-let[showFavs, setShowFavs] = React.useState(false)
-if(showFavs){
-	return<>
-		<p> {props.name}favorite games are:<span style={{color: props.favGames}}>{props.favGames}</span>
 
-		 <Button onMouseOver={()=>{
-			setShowFavs(false)
-		}}>Unshow Favs </Button>
-		</p>
-		
-	</>
-}else{
-	return<>
-		<p>{props.name} favorite games are: 
-		<Button onMouseOver={()=>{
-			setShowFavs(true)
-		}}>Show Favorites </Button>
-		</p>
-	</>
-}
-}
-function Clicker(props){
- let [count, setCount] = React.useState(0)
-  return<>
-  <p>{props.author} {props.famousBooks} </p>
-
-  <p>Earnings {count}</p>
-  <button onClick={()=>{
-	setCount(count + 10000)
-  }}>How much?</button>
-
-
-  </>
-}
 function NameGames() {
 	let [games, setGames] = React.useState("No data yet")
 
 	React.useEffect(() => {
-	  fetch('https://pear-bush-scraper.glitch.me//')
+	  fetch('https://pear-bush-scraper.glitch.me/')
 		.then((response) => response.json())
 		.then((data) => {
 		  //let firstGame = data.myGames[1].name
 		  setGames(data.myGames)
 		});
 	})
+
 	return <> 
-	  Games: { games && games[2].name }
-	  <br/><br/>
+	<div style={{border: "2px solid blue", color:"White", background: "black",   textAlign:"center", fontSize: "30px",}}>
+	  Some Games I've Enjoyed</div>
 
-			All Time Games <br/><br/> 
-
-			{games && <Project project={games[0]}/>}
-			{games && <Project project={games[1]}/>}
-			{games && <Project project={games[2]}/>}
+			<p style={{textAlign: "center"}}>{games && <Project project={games[0]}/>}</p>
+			<p style={{textAlign: "center"}}>{games && <Project project={games[1]}/>}</p>
+			<p style={{textAlign: "center"}}>{games && <Project project={games[2]}/>}</p>
+			<p style={{textAlign: "center"}}>{games && <Project project={games[3]}/>}</p>
 			</>
 	
   }
   function Project(props){
-	return <div style={{border: "1px solid white",  color:"White", background: "black"}}> 
-	  Name: {props.project.name}
-	  <ul>
+	return <div style={{border: "2px solid blue", color:"White", background: "black", display: "inline-flex", margin: "40px"}}> 
+	  <p style ={{margin:"35px"}}> {props.project.name}</p>
+	  <ul style={{ listStyleType: "none",display: "inline-block" }}>
 		
-		<li>Category: {props.project.type}</li>
-		<li>Ranking: {props.project.Rank}</li>
-		<li>Time spent: {props.project.Time}</li>
+		<li style={{textAlign:"center"}}>Category: {props.project.type}</li>
+		<li style={{textAlign:"center"}}>Ranking: {props.project.Rank}</li>
+		<li style={{textAlign:"center"}}>Time spent: {props.project.Time}</li>
 	  </ul> 
 	</div>
-	
   }
-
-
 
 export default App;
