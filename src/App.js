@@ -68,11 +68,11 @@ function NameGames() {
 	let [games, setGames] = React.useState("No data yet")
 
 	React.useEffect(() => {
-	  fetch('https://pear-bush-scraper.glitch.me/')
+	  fetch('http://35.84.211.78:3000/')
 		.then((response) => response.json())
 		.then((data) => {
 		  //let firstGame = data.myGames[1].name
-		  setGames(data.myGames)
+		  setGames(data)
 		});
 	})
 
@@ -83,7 +83,6 @@ function NameGames() {
 			<p style={{textAlign: "center"}}>{games && <Project project={games[0]}/>}</p>
 			<p style={{textAlign: "center"}}>{games && <Project project={games[1]}/>}</p>
 			<p style={{textAlign: "center"}}>{games && <Project project={games[2]}/>}</p>
-			<p style={{textAlign: "center"}}>{games && <Project project={games[3]}/>}</p>
 			</>
 	
   }
@@ -92,9 +91,9 @@ function NameGames() {
 	  <p style ={{margin:"35px"}}> {props.project.name}</p>
 	  <ul style={{ listStyleType: "none",display: "inline-block" }}>
 		
-		<li style={{textAlign:"center"}}>Category: {props.project.type}</li>
-		<li style={{textAlign:"center"}}>Ranking: {props.project.Rank}</li>
-		<li style={{textAlign:"center"}}>Time spent: {props.project.Time}</li>
+		<li style={{textAlign:"center"}}>Category: {props.project.gametype}</li>
+		<li style={{textAlign:"center"}}>Ranking: {props.project.GameRank}</li>
+		<li style={{textAlign:"center"}}>Time spent: {props.project.TimePlayed}</li>
 	  </ul> 
 	</div>
   }
